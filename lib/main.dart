@@ -40,27 +40,27 @@ class Marimba extends StatelessWidget {
 
   return Column(
       children: [
-        const SizedBox(height: 24.0), // Espaciado superior
+        //const SizedBox(height: 24.0), // Espaciado superior
         Expanded(
           child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly, 
       
         children: [
-          MarimbaKey(note: 'a',soundPath: 'sounds/marimba1.mp3',buttonColor: Colors.red,),
-          MarimbaKey(note: 'b',soundPath: 'sounds/marimba2.mp3',buttonColor: Colors.blue,),
+          MarimbaKey(note: 'A',soundPath: 'sounds/marimba1.mp3',buttonColor: Colors.red,),
+          MarimbaKey(note: 'B',soundPath: 'sounds/marimba2.mp3',buttonColor: Colors.blue,),
           MarimbaKey(note: 'C',soundPath: 'sounds/marimba3.mp3',buttonColor: Colors.brown,),
           MarimbaKey(note: 'D',soundPath: 'sounds/marimba4.mp3',buttonColor: Colors.green,),
-          MarimbaKey(note: 'e',soundPath: 'sounds/marimba5.mp3',buttonColor: Colors.yellow,),
-          MarimbaKey(note: 'f',soundPath: 'sounds/marimba6.mp3',buttonColor: Colors.purple,),
-          MarimbaKey(note: 'g',soundPath: 'sounds/marimba7.mp3',buttonColor: Colors.orange,),
-          MarimbaKey(note: 'h',soundPath: 'sounds/marimba8.mp3',buttonColor: Colors.pink,),
+          MarimbaKey(note: 'E',soundPath: 'sounds/marimba5.mp3',buttonColor: Colors.yellow,),
+          MarimbaKey(note: 'F',soundPath: 'sounds/marimba6.mp3',buttonColor: Colors.purple,),
+          MarimbaKey(note: 'G',soundPath: 'sounds/marimba7.mp3',buttonColor: Colors.orange,),
+          MarimbaKey(note: 'H',soundPath: 'sounds/marimba8.mp3',buttonColor: Colors.pink,),
        
       
           // Agrega más teclas de la marimba según sea necesario
      ],
           ),
         ),
-        const SizedBox(height: 16.0), // Espaciado inferior
+      //  const SizedBox(height: 16.0), // Espaciado inferior
       ],
     );
   }
@@ -85,6 +85,8 @@ class MarimbaKey extends StatelessWidget {
           child: AnimatedButton(
             shadowDegree: ShadowDegree.dark,
             color: buttonColor,
+            height: MediaQuery.of(context).size.height * 0.8,
+            width: MediaQuery.of(context).size.width * 0.1,
             onPressed: () async {
                player.setReleaseMode(ReleaseMode.release);
               await player.play(AssetSource(soundPath));
